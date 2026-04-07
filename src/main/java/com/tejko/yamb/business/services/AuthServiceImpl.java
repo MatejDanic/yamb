@@ -138,7 +138,7 @@ public class AuthServiceImpl implements AuthService {
             mergePlayers(player, List.of(AuthContext.getAuthenticatedPlayer()));
         }
 
-        if (!"dev".equalsIgnoreCase(activeProfile)) emailSender.sendNewUserNotificationEmail("matej@jamb.com.hr", player.getUsername(), "https://jamb.com.hr/players/" + player.getExternalId());
+        //if (!"dev".equalsIgnoreCase(activeProfile)) emailSender.sendNewUserNotificationEmail("matej@jamb.com.hr", player.getUsername(), "https://jamb.com.hr/players/" + player.getExternalId());
         return player;
     }
 
@@ -163,7 +163,7 @@ public class AuthServiceImpl implements AuthService {
             mergePlayers(player, List.of(AuthContext.getAuthenticatedPlayer()));
         }
 
-        if (!"dev".equalsIgnoreCase(activeProfile)) emailSender.sendNewUserNotificationEmail("matej@jamb.com.hr", player.getUsername(), "https://jamb.com.hr/players/" + player.getExternalId());
+        //if (!"dev".equalsIgnoreCase(activeProfile)) emailSender.sendNewUserNotificationEmail("matej@jamb.com.hr", player.getUsername(), "https://jamb.com.hr/players/" + player.getExternalId());
         String newAccessToken = jwtUtil.generateAccessToken(player.getExternalId());
         String newRefreshToken = jwtUtil.generateRefreshToken(player.getExternalId());
         return new PlayerWithTokens(player, newAccessToken, newRefreshToken);    
